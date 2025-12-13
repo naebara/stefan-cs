@@ -12,6 +12,8 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(
     new MySqlServerVersion(new Version(5,7,39))
 ));
 
+builder.Services.AddScoped<ICarService, CarService>();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
